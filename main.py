@@ -1,7 +1,10 @@
-import os
 from time import time, perf_counter
 from functools import wraps
 from lyzr_agents.storm import StormAgent
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 # Environment variables (avoid hardcoding secrets in code)
 LYZR_API_KEY = os.getenv("LYZR_API_KEY")
@@ -48,7 +51,7 @@ def async_timeit(func):
 async def main():
     result = await agent.write_async("Internet of Things")
     result.toFile("internet_of_things_async_1.md")
-    graph_data = result.graph_data()
+    graph_data = result.get_graph_data()
     print(graph_data)
     # result.print()
 

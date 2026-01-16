@@ -9,27 +9,18 @@ Small proof-of-concept showing how to use **Lyzr StormAgent** to generate a mult
 
 ## Setup
 
-Set environment variables (recommended; avoids hardcoding secrets in code):
+Set environment variables (.env file):
 
 ```bash
-export LYZR_API_KEY="YOUR_LYZR_API_KEY"
-export LYZR_USER_ID="you@company.com"   # optional (defaults to user@example.com)
+LYZR_API_KEY="YOUR_LYZR_API_KEY"
+LYZR_USER_ID="you@company.com"
 ```
 
-Install dependencies (pick one):
-
-### Option A: `uv` (recommended)
+Install dependencies:
 
 ```bash
 uv sync
-```
-
-### Option B: `pip`
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+uv add -r requirments.txt
 ```
 
 ## Run: Storm article generation (async)
@@ -37,7 +28,7 @@ pip install -r requirements.txt
 Runs `StormAgent.write_async(...)`, prints event updates, writes a markdown file, and prints graph data:
 
 ```bash
-python main.py
+uv run main.py
 ```
 
 Expected outputs:
@@ -54,5 +45,5 @@ python test_lyzr.py
 
 ## Notes
 
-- **Secrets**: `LYZR_API_KEY` is read from the environment in both `main.py` and `test_lyzr.py`.
+- **Secrets**: `LYZR_API_KEY` is read from the environment in `main.py`
 - **Tuning**: In `main.py`, tweak `no_of_personas`, `no_of_questions`, and `no_of_sections` to change the depth/length of the generated content.
