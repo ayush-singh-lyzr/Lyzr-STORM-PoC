@@ -6,5 +6,6 @@ readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
     "lyzr-agents[storm]>=0.1.2",
+    "matplotlib>=3.10.8",
     "python-dotenv>=1.2.1",
 ]

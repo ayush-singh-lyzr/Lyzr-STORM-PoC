@@ -1,7 +1,11 @@
-from time import time, perf_counter
+from time import perf_counter
 from functools import wraps
 from lyzr_agents.storm import StormAgent
-from dotenv import load_dotenv
+try:
+    from dotenv import load_dotenv
+except ModuleNotFoundError:  # optional dependency
+    def load_dotenv(*_args, **_kwargs) -> bool:  # type: ignore
+        return False
 import os
 
 load_dotenv()
@@ -12,8 +16,8 @@ LYZR_USER_ID = os.getenv("LYZR_USER_ID", "user@example.com")
 
 if not LYZR_API_KEY:
     raise RuntimeError(
-        "Missing LYZR_API_KEY. Set it in your environment, e.g.:\n"
-        "  export LYZR_API_KEY='...'\n"
+        "Missing LYZR_API_KEY. Put it in a .env file or export it, e.g.:\n"
+        '  echo \'LYZR_API_KEY="..."\' > .env\n'
         "Optionally also set LYZR_USER_ID='you@company.com'."
     )
 

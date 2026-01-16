@@ -1,3 +1,4 @@
 lyzr-agents
 lyzr-agents[storm]
 python-dotenv
+matplotlib

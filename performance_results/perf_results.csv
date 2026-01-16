@@ -1,0 +1,5 @@
+ts_utc,topic,test_mode,personas,questions,sections,run_index,elapsed_s,success,article_chars,events_count,error
+2026-01-16T14:17:18.802561+00:00,Internet of Things,False,1,1,1,1,234.68021500000032,True,5841,18,
+2026-01-16T14:22:04.024089+00:00,Internet of Things,False,1,1,2,1,285.220340083004,True,11832,21,
+2026-01-16T14:25:58.521045+00:00,Internet of Things,False,2,1,1,1,234.49598166700162,True,6224,25,
+2026-01-16T14:30:19.947831+00:00,Internet of Things,False,2,1,2,1,261.42527049999626,True,10129,28,
